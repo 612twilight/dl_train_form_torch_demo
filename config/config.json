@@ -19,5 +19,13 @@
   "prepared_predict_file": "prepared_data/predict.txt",
   "train_batch": 16,
   "eval_batch": 16,
-  "epoch_num": 20
+  "epoch_num": 20,
+  "emb_size": 300,
+  "rel_emb_size": 100,
+  "bio_emb_size": 50,
+  "hidden_size": 300,
+  "threshold": 0.5,
+  "activation": "tanh",
+  "optimizer": "adam",
+  "gpu": 3
 }

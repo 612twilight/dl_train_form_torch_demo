@@ -65,6 +65,7 @@ def inference(mask, text_list, decoded_tag, selection_logits, relation2index, bi
                                           relation2index, bio2index)
     return selection_triplets
 
+
 def description(epoch, epoch_num, output):
     return "L: {:.2f}, L_crf: {:.2f}, L_selection: {:.2f}, epoch: {}/{}:".format(
         output['loss'].item(), output['crf_loss'].item(),

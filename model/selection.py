@@ -13,10 +13,10 @@ from typing import Dict
 
 import torch
 import torch.nn as nn
-from torchcrf import CRF
 
 from config.hyper import hyper
 from model.component.components import masked_BCEloss, inference, description
+from model.component.torchcrf import CRF
 from utils.utils import read_vocab
 
 
@@ -53,7 +53,7 @@ class MultiHeadSelection(nn.Module):
         else:
             raise ValueError('unexpected activation!')
 
-        self.tagger = CRF(len(self.bio_vocab) - 1, batch_first=True)
+        self.tagger = CRF(len(self.bio_vocab) - 1)
 
         self.selection_u = nn.Linear(hyper.hidden_size + hyper.bio_emb_size,
                                      hyper.rel_emb_size)

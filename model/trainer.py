@@ -69,9 +69,7 @@ class Runner(object):
     def save_model(self, epoch: int):
         if not os.path.exists(self.model_dir):
             os.mkdir(self.model_dir)
-        torch.save(
-            self.model.state_dict(),
-            os.path.join(self.model_dir, self.exp_name + '_' + str(epoch)))
+        torch.save(self.model.state_dict(), os.path.join(self.model_dir, self.exp_name + '_' + str(epoch)))
 
     def evaluation(self):
         dev_set = MultiHeadDataset(hyper.prepared_dev_file)

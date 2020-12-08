@@ -9,6 +9,8 @@ Create Date: 2020/12/8
 """
 import argparse
 
+from model.trainer import Runner
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--exp_name',
                     '-e',
@@ -21,3 +23,6 @@ parser.add_argument('--mode',
                     default='preprocessing',
                     help='preprocessing|train|evaluation')
 args = parser.parse_args()
+
+config = Runner(exp_name=args.exp_name)
+config.run(mode=args.mode)
