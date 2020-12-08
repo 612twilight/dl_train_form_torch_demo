@@ -8,9 +8,9 @@ Create Date: 2020/12/3
 -------------------------------------------------
 """
 import os
-from logger import log
+
 from config.hyper import hyper
-import json
+from logger import log
 
 
 class BaseProcessing(object):
@@ -18,7 +18,7 @@ class BaseProcessing(object):
                  dev_file="raw_data/dev.txt",
                  test_file="raw_data/test.txt",
                  predict_file="raw_data/predict.txt",
-                 prepared_train_file="raw_data/train.txt",
+                 prepared_train_file="prepared_data/train.txt",
                  prepared_dev_file="prepared_data/dev.txt",
                  prepared_test_file="prepared_data/test.txt",
                  prepared_predict_file="prepared_data/predict.txt"
@@ -32,9 +32,13 @@ class BaseProcessing(object):
         self.prepared_dev_file = prepared_dev_file
         self.prepared_predict_file = prepared_predict_file
         self.dataset_check()
+        # self.build_vocab()
+        # self.handle_data()
+        hyper.save_config()
+
+    def preprocess(self):
         self.build_vocab()
         self.handle_data()
-        hyper.save_config()
 
     def build_vocab(self):
         """

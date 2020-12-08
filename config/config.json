@@ -1,4 +1,23 @@
 {
+  "config_file": "config/config.json",
+  "contains_dev": true,
+  "contains_test": true,
+  "contains_predict": false,
   "a": 10,
-  "max_text_len": 300
+  "max_text_len": 300,
+  "label_path": "prepared_data/label.txt",
+  "vocab_path": "prepared_data/vocab.txt",
+  "bio_label_path": "prepared_data/bio.txt",
+  "saved_models": "saved_models",
+  "train_file": "raw_data/train.txt",
+  "dev_file": "raw_data/dev.txt",
+  "test_file": "raw_data/test.txt",
+  "predict_file": "raw_data/predict.txt",
+  "prepared_train_file": "prepared_data/train.txt",
+  "prepared_dev_file": "prepared_data/dev.txt",
+  "prepared_test_file": "prepared_data/test.txt",
+  "prepared_predict_file": "prepared_data/predict.txt",
+  "train_batch": 16,
+  "eval_batch": 16,
+  "epoch_num": 20
 }
